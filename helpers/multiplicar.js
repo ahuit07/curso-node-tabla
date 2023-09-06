@@ -5,9 +5,11 @@ const crearArchivo = async( base = 5, limite = 10, imprimir ) => {
 
     try {
         let salida = '';
+        let consola = '';
 
         for(let i = 1; i <= limite; i++) {
             salida += `${base} x ${i} = ${base * i}\n`;
+            consola += `${base} ${'x'.green} ${i} ${'='.green} ${base * i}\n`;
         }
 
 
@@ -15,7 +17,7 @@ const crearArchivo = async( base = 5, limite = 10, imprimir ) => {
             console.log('======================='.green);
             console.log(`  Tabla del ${base}  `);
             console.log('=======================');
-            console.log(salida);
+            console.log(consola);
         }
 
         fs.writeFileSync(`./salida/tabla-${base}.txt`, salida);
